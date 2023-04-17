@@ -11,12 +11,10 @@ type AppLayoutProps = React.PropsWithChildren;
 function AppLayout({ children }: AppLayoutProps) {
   return (
     <>
-      <Toolbar>
+      <Container maxWidth="lg" component="main" sx={{ p: 2 }}>
         <NextLink href={routes.home({})}>
           <Title>Rick and Morty</Title>
         </NextLink>
-      </Toolbar>
-      <Container maxWidth="lg" component="main" sx={{ p: 2 }}>
         {children}
       </Container>
     </>
