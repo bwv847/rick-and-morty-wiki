@@ -203,39 +203,26 @@ export type QueryLocationsByIdsArgs = {
   ids: Array<Scalars['ID']>;
 };
 
-export type PageInfoFragment = { __typename?: 'Info', next?: number | null | undefined };
+export type PageInfoFragment = { __typename?: 'Info', next?: number | null | undefined, pages?: number | null | undefined };
 
-export type CharacterCard_CharacterFragment = { __typename?: 'Character', id?: string | null | undefined, name?: string | null | undefined, image?: string | null | undefined, episode: Array<{ __typename?: 'Episode', id?: string | null | undefined, air_date?: string | null | undefined } | null | undefined> };
+export type CharacterCard_CharacterFragment = { __typename?: 'Character', id?: string | null | undefined, name?: string | null | undefined, image?: string | null | undefined };
 
-export type CharacterCard_CharacterWithSpecsFragment = { __typename?: 'Character', status?: string | null | undefined, species?: string | null | undefined, gender?: string | null | undefined, id?: string | null | undefined, name?: string | null | undefined, image?: string | null | undefined, origin?: { __typename?: 'Location', id?: string | null | undefined, name?: string | null | undefined } | null | undefined, location?: { __typename?: 'Location', id?: string | null | undefined, name?: string | null | undefined } | null | undefined, episode: Array<{ __typename?: 'Episode', id?: string | null | undefined, air_date?: string | null | undefined } | null | undefined> };
+export type CharacterCard_CharacterWithSpecsFragment = { __typename?: 'Character', status?: string | null | undefined, species?: string | null | undefined, gender?: string | null | undefined, id?: string | null | undefined, name?: string | null | undefined, image?: string | null | undefined, origin?: { __typename?: 'Location', id?: string | null | undefined, name?: string | null | undefined } | null | undefined, location?: { __typename?: 'Location', id?: string | null | undefined, name?: string | null | undefined } | null | undefined };
 
-export type CharacterGridList_CharacterFragment = { __typename?: 'Character', id?: string | null | undefined, name?: string | null | undefined, image?: string | null | undefined, episode: Array<{ __typename?: 'Episode', id?: string | null | undefined, air_date?: string | null | undefined } | null | undefined> };
+export type CharacterGridList_CharacterFragment = { __typename?: 'Character', id?: string | null | undefined, name?: string | null | undefined, image?: string | null | undefined };
 
-export type CharacterGridListItem_CharacterFragment = { __typename?: 'Character', id?: string | null | undefined, name?: string | null | undefined, image?: string | null | undefined, episode: Array<{ __typename?: 'Episode', id?: string | null | undefined, air_date?: string | null | undefined } | null | undefined> };
-
-export type EpisodeCard_EpisodeFragment = { __typename?: 'Episode', id?: string | null | undefined, name?: string | null | undefined, episode?: string | null | undefined, air_date?: string | null | undefined };
+export type CharacterGridListItem_CharacterFragment = { __typename?: 'Character', id?: string | null | undefined, name?: string | null | undefined, image?: string | null | undefined };
 
 export type EpisodeList_EpisodeFragment = { __typename?: 'Episode', id?: string | null | undefined, name?: string | null | undefined, air_date?: string | null | undefined, episode?: string | null | undefined };
 
 export type EpisodeListItem_EpisodeFragment = { __typename?: 'Episode', id?: string | null | undefined, name?: string | null | undefined, air_date?: string | null | undefined, episode?: string | null | undefined };
-
-export type GetShowDrawerQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type GetShowDrawerQuery = { __typename?: 'Query', showDrawer: boolean };
-
-export type LocationCard_LocationFragment = { __typename?: 'Location', id?: string | null | undefined, name?: string | null | undefined, type?: string | null | undefined, dimension?: string | null | undefined };
-
-export type LocationList_LocationFragment = { __typename?: 'Location', id?: string | null | undefined, name?: string | null | undefined, type?: string | null | undefined };
-
-export type LocationListItem_LocationFragment = { __typename?: 'Location', id?: string | null | undefined, name?: string | null | undefined, type?: string | null | undefined };
 
 export type GetCharacterQueryVariables = Exact<{
   id: Scalars['ID'];
 }>;
 
 
-export type GetCharacterQuery = { __typename?: 'Query', character?: { __typename?: 'Character', name?: string | null | undefined, image?: string | null | undefined, status?: string | null | undefined, species?: string | null | undefined, gender?: string | null | undefined, id?: string | null | undefined, episode: Array<{ __typename?: 'Episode', id?: string | null | undefined, air_date?: string | null | undefined, name?: string | null | undefined, episode?: string | null | undefined } | null | undefined>, origin?: { __typename?: 'Location', id?: string | null | undefined, name?: string | null | undefined } | null | undefined, location?: { __typename?: 'Location', id?: string | null | undefined, name?: string | null | undefined } | null | undefined } | null | undefined };
+export type GetCharacterQuery = { __typename?: 'Query', character?: { __typename?: 'Character', name?: string | null | undefined, image?: string | null | undefined, status?: string | null | undefined, species?: string | null | undefined, gender?: string | null | undefined, id?: string | null | undefined, episode: Array<{ __typename?: 'Episode', id?: string | null | undefined, name?: string | null | undefined, air_date?: string | null | undefined, episode?: string | null | undefined } | null | undefined>, origin?: { __typename?: 'Location', id?: string | null | undefined, name?: string | null | undefined } | null | undefined, location?: { __typename?: 'Location', id?: string | null | undefined, name?: string | null | undefined } | null | undefined } | null | undefined };
 
 export type GetCharactersQueryVariables = Exact<{
   page?: InputMaybe<Scalars['Int']>;
@@ -243,40 +230,12 @@ export type GetCharactersQueryVariables = Exact<{
 }>;
 
 
-export type GetCharactersQuery = { __typename?: 'Query', characters?: { __typename?: 'Characters', results?: Array<{ __typename?: 'Character', id?: string | null | undefined, name?: string | null | undefined, image?: string | null | undefined, episode: Array<{ __typename?: 'Episode', id?: string | null | undefined, air_date?: string | null | undefined } | null | undefined> } | null | undefined> | null | undefined, info?: { __typename?: 'Info', next?: number | null | undefined } | null | undefined } | null | undefined };
-
-export type GetEpisodeQueryVariables = Exact<{
-  id: Scalars['ID'];
-}>;
-
-
-export type GetEpisodeQuery = { __typename?: 'Query', episode?: { __typename?: 'Episode', name?: string | null | undefined, id?: string | null | undefined, episode?: string | null | undefined, air_date?: string | null | undefined, characters: Array<{ __typename?: 'Character', id?: string | null | undefined, name?: string | null | undefined, image?: string | null | undefined, episode: Array<{ __typename?: 'Episode', id?: string | null | undefined, air_date?: string | null | undefined } | null | undefined> } | null | undefined> } | null | undefined };
-
-export type GetEpisodesQueryVariables = Exact<{
-  page?: InputMaybe<Scalars['Int']>;
-  filter?: InputMaybe<FilterEpisode>;
-}>;
-
-
-export type GetEpisodesQuery = { __typename?: 'Query', episodes?: { __typename?: 'Episodes', results?: Array<{ __typename?: 'Episode', id?: string | null | undefined, name?: string | null | undefined, air_date?: string | null | undefined, episode?: string | null | undefined } | null | undefined> | null | undefined, info?: { __typename?: 'Info', next?: number | null | undefined } | null | undefined } | null | undefined };
-
-export type GetLocationQueryVariables = Exact<{
-  id: Scalars['ID'];
-}>;
-
-
-export type GetLocationQuery = { __typename?: 'Query', location?: { __typename?: 'Location', name?: string | null | undefined, id?: string | null | undefined, type?: string | null | undefined, dimension?: string | null | undefined, residents: Array<{ __typename?: 'Character', id?: string | null | undefined, name?: string | null | undefined, image?: string | null | undefined, episode: Array<{ __typename?: 'Episode', id?: string | null | undefined, air_date?: string | null | undefined } | null | undefined> } | null | undefined> } | null | undefined };
-
-export type GetLocationsQueryVariables = Exact<{
-  page?: InputMaybe<Scalars['Int']>;
-}>;
-
-
-export type GetLocationsQuery = { __typename?: 'Query', locations?: { __typename?: 'Locations', results?: Array<{ __typename?: 'Location', id?: string | null | undefined, name?: string | null | undefined, type?: string | null | undefined } | null | undefined> | null | undefined, info?: { __typename?: 'Info', next?: number | null | undefined } | null | undefined } | null | undefined };
+export type GetCharactersQuery = { __typename?: 'Query', characters?: { __typename?: 'Characters', results?: Array<{ __typename?: 'Character', id?: string | null | undefined, name?: string | null | undefined, image?: string | null | undefined } | null | undefined> | null | undefined, info?: { __typename?: 'Info', next?: number | null | undefined, pages?: number | null | undefined } | null | undefined } | null | undefined };
 
 export const PageInfoFragmentDoc = gql`
     fragment pageInfo on Info {
   next
+  pages
 }
     `;
 export const CharacterCard_CharacterFragmentDoc = gql`
@@ -284,10 +243,6 @@ export const CharacterCard_CharacterFragmentDoc = gql`
   id
   name
   image
-  episode {
-    id
-    air_date
-  }
 }
     `;
 export const CharacterCard_CharacterWithSpecsFragmentDoc = gql`
@@ -316,14 +271,6 @@ export const CharacterGridList_CharacterFragmentDoc = gql`
   ...CharacterGridListItem_character
 }
     ${CharacterGridListItem_CharacterFragmentDoc}`;
-export const EpisodeCard_EpisodeFragmentDoc = gql`
-    fragment EpisodeCard_episode on Episode {
-  id
-  name
-  episode
-  air_date
-}
-    `;
 export const EpisodeListItem_EpisodeFragmentDoc = gql`
     fragment EpisodeListItem_episode on Episode {
   id
@@ -337,58 +284,6 @@ export const EpisodeList_EpisodeFragmentDoc = gql`
   ...EpisodeListItem_episode
 }
     ${EpisodeListItem_EpisodeFragmentDoc}`;
-export const LocationCard_LocationFragmentDoc = gql`
-    fragment LocationCard_location on Location {
-  id
-  name
-  type
-  dimension
-}
-    `;
-export const LocationListItem_LocationFragmentDoc = gql`
-    fragment LocationListItem_location on Location {
-  id
-  name
-  type
-}
-    `;
-export const LocationList_LocationFragmentDoc = gql`
-    fragment LocationList_location on Location {
-  ...LocationListItem_location
-}
-    ${LocationListItem_LocationFragmentDoc}`;
-export const GetShowDrawerDocument = gql`
-    query GetShowDrawer {
-  showDrawer @client
-}
-    `;
-
-/**
- * __useGetShowDrawerQuery__
- *
- * To run a query within a React component, call `useGetShowDrawerQuery` and pass it any options that fit your needs.
- * When your component renders, `useGetShowDrawerQuery` returns an object from Apollo Client that contains loading, error, and data properties
- * you can use to render your UI.
- *
- * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
- *
- * @example
- * const { data, loading, error } = useGetShowDrawerQuery({
- *   variables: {
- *   },
- * });
- */
-export function useGetShowDrawerQuery(baseOptions?: Apollo.QueryHookOptions<GetShowDrawerQuery, GetShowDrawerQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GetShowDrawerQuery, GetShowDrawerQueryVariables>(GetShowDrawerDocument, options);
-      }
-export function useGetShowDrawerLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetShowDrawerQuery, GetShowDrawerQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GetShowDrawerQuery, GetShowDrawerQueryVariables>(GetShowDrawerDocument, options);
-        }
-export type GetShowDrawerQueryHookResult = ReturnType<typeof useGetShowDrawerQuery>;
-export type GetShowDrawerLazyQueryHookResult = ReturnType<typeof useGetShowDrawerLazyQuery>;
-export type GetShowDrawerQueryResult = Apollo.QueryResult<GetShowDrawerQuery, GetShowDrawerQueryVariables>;
 export const GetCharacterDocument = gql`
     query GetCharacter($id: ID!) {
   character(id: $id) {
@@ -472,166 +367,3 @@ export function useGetCharactersLazyQuery(baseOptions?: Apollo.LazyQueryHookOpti
 export type GetCharactersQueryHookResult = ReturnType<typeof useGetCharactersQuery>;
 export type GetCharactersLazyQueryHookResult = ReturnType<typeof useGetCharactersLazyQuery>;
 export type GetCharactersQueryResult = Apollo.QueryResult<GetCharactersQuery, GetCharactersQueryVariables>;
-export const GetEpisodeDocument = gql`
-    query GetEpisode($id: ID!) {
-  episode(id: $id) {
-    name
-    ...EpisodeCard_episode
-    characters {
-      ...CharacterGridList_character
-    }
-  }
-}
-    ${EpisodeCard_EpisodeFragmentDoc}
-${CharacterGridList_CharacterFragmentDoc}`;
-
-/**
- * __useGetEpisodeQuery__
- *
- * To run a query within a React component, call `useGetEpisodeQuery` and pass it any options that fit your needs.
- * When your component renders, `useGetEpisodeQuery` returns an object from Apollo Client that contains loading, error, and data properties
- * you can use to render your UI.
- *
- * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
- *
- * @example
- * const { data, loading, error } = useGetEpisodeQuery({
- *   variables: {
- *      id: // value for 'id'
- *   },
- * });
- */
-export function useGetEpisodeQuery(baseOptions: Apollo.QueryHookOptions<GetEpisodeQuery, GetEpisodeQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GetEpisodeQuery, GetEpisodeQueryVariables>(GetEpisodeDocument, options);
-      }
-export function useGetEpisodeLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetEpisodeQuery, GetEpisodeQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GetEpisodeQuery, GetEpisodeQueryVariables>(GetEpisodeDocument, options);
-        }
-export type GetEpisodeQueryHookResult = ReturnType<typeof useGetEpisodeQuery>;
-export type GetEpisodeLazyQueryHookResult = ReturnType<typeof useGetEpisodeLazyQuery>;
-export type GetEpisodeQueryResult = Apollo.QueryResult<GetEpisodeQuery, GetEpisodeQueryVariables>;
-export const GetEpisodesDocument = gql`
-    query GetEpisodes($page: Int, $filter: FilterEpisode) {
-  episodes(page: $page, filter: $filter) {
-    results {
-      ...EpisodeList_episode
-    }
-    info {
-      ...pageInfo
-    }
-  }
-}
-    ${EpisodeList_EpisodeFragmentDoc}
-${PageInfoFragmentDoc}`;
-
-/**
- * __useGetEpisodesQuery__
- *
- * To run a query within a React component, call `useGetEpisodesQuery` and pass it any options that fit your needs.
- * When your component renders, `useGetEpisodesQuery` returns an object from Apollo Client that contains loading, error, and data properties
- * you can use to render your UI.
- *
- * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
- *
- * @example
- * const { data, loading, error } = useGetEpisodesQuery({
- *   variables: {
- *      page: // value for 'page'
- *      filter: // value for 'filter'
- *   },
- * });
- */
-export function useGetEpisodesQuery(baseOptions?: Apollo.QueryHookOptions<GetEpisodesQuery, GetEpisodesQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GetEpisodesQuery, GetEpisodesQueryVariables>(GetEpisodesDocument, options);
-      }
-export function useGetEpisodesLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetEpisodesQuery, GetEpisodesQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GetEpisodesQuery, GetEpisodesQueryVariables>(GetEpisodesDocument, options);
-        }
-export type GetEpisodesQueryHookResult = ReturnType<typeof useGetEpisodesQuery>;
-export type GetEpisodesLazyQueryHookResult = ReturnType<typeof useGetEpisodesLazyQuery>;
-export type GetEpisodesQueryResult = Apollo.QueryResult<GetEpisodesQuery, GetEpisodesQueryVariables>;
-export const GetLocationDocument = gql`
-    query GetLocation($id: ID!) {
-  location(id: $id) {
-    name
-    ...LocationCard_location
-    residents {
-      ...CharacterGridList_character
-    }
-  }
-}
-    ${LocationCard_LocationFragmentDoc}
-${CharacterGridList_CharacterFragmentDoc}`;
-
-/**
- * __useGetLocationQuery__
- *
- * To run a query within a React component, call `useGetLocationQuery` and pass it any options that fit your needs.
- * When your component renders, `useGetLocationQuery` returns an object from Apollo Client that contains loading, error, and data properties
- * you can use to render your UI.
- *
- * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
- *
- * @example
- * const { data, loading, error } = useGetLocationQuery({
- *   variables: {
- *      id: // value for 'id'
- *   },
- * });
- */
-export function useGetLocationQuery(baseOptions: Apollo.QueryHookOptions<GetLocationQuery, GetLocationQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GetLocationQuery, GetLocationQueryVariables>(GetLocationDocument, options);
-      }
-export function useGetLocationLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetLocationQuery, GetLocationQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GetLocationQuery, GetLocationQueryVariables>(GetLocationDocument, options);
-        }
-export type GetLocationQueryHookResult = ReturnType<typeof useGetLocationQuery>;
-export type GetLocationLazyQueryHookResult = ReturnType<typeof useGetLocationLazyQuery>;
-export type GetLocationQueryResult = Apollo.QueryResult<GetLocationQuery, GetLocationQueryVariables>;
-export const GetLocationsDocument = gql`
-    query GetLocations($page: Int) {
-  locations(page: $page) {
-    results {
-      ...LocationList_location
-    }
-    info {
-      ...pageInfo
-    }
-  }
-}
-    ${LocationList_LocationFragmentDoc}
-${PageInfoFragmentDoc}`;
-
-/**
- * __useGetLocationsQuery__
- *
- * To run a query within a React component, call `useGetLocationsQuery` and pass it any options that fit your needs.
- * When your component renders, `useGetLocationsQuery` returns an object from Apollo Client that contains loading, error, and data properties
- * you can use to render your UI.
- *
- * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
- *
- * @example
- * const { data, loading, error } = useGetLocationsQuery({
- *   variables: {
- *      page: // value for 'page'
- *   },
- * });
- */
-export function useGetLocationsQuery(baseOptions?: Apollo.QueryHookOptions<GetLocationsQuery, GetLocationsQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GetLocationsQuery, GetLocationsQueryVariables>(GetLocationsDocument, options);
-      }
-export function useGetLocationsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetLocationsQuery, GetLocationsQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GetLocationsQuery, GetLocationsQueryVariables>(GetLocationsDocument, options);
-        }
-export type GetLocationsQueryHookResult = ReturnType<typeof useGetLocationsQuery>;
-export type GetLocationsLazyQueryHookResult = ReturnType<typeof useGetLocationsLazyQuery>;
-export type GetLocationsQueryResult = Apollo.QueryResult<GetLocationsQuery, GetLocationsQueryVariables>;

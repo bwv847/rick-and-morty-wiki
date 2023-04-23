@@ -26,7 +26,7 @@ const cache = new InMemoryCache({
   typePolicies: {
     Query: {
       fields: {
-        characters: mergePagination(['filter']),
+        characters: mergePagination(['filter', 'page']),
         locations: mergePagination(),
         episodes: mergePagination(),
         showDrawer: {

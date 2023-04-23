@@ -21,14 +21,7 @@ function BaseGridList<Item>({
 }: BaseGridListProps<Item>) {
   return (
     <Grid container spacing={1}>
-      <>
-        {items?.map((item, index) => renderItem(item, index))}
-        {loading && (
-          <Grid item xs={12} ref={loadingRef}>
-            <LoadingIndicator loading />
-          </Grid>
-        )}
-      </>
+      <>{items?.map((item, index) => renderItem(item, index))}</>
     </Grid>
   );
 }

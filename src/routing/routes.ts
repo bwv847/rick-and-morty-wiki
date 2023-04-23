@@ -31,7 +31,9 @@ export type QueryParams<T extends (...args: any) => any> =
 
 export const routes = {
   home: createRoute('/'),
-  characters: createRoute<{ query?: { name?: string } }>('/characters'),
+  characters: createRoute<{ query?: { page?: string; name?: string } }>(
+    '/characters',
+  ),
   character: createRoute<{ params: { id: string } }>(
     ({ id }) => `/characters/${id}`,
   ),
