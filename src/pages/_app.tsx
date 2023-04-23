@@ -7,6 +7,7 @@ import { CacheProvider, EmotionCache } from '@emotion/react';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import { ApolloClient, ApolloProvider } from '@apollo/client';
 import { useApollo } from '@/apollo/apollo';
+import PageProgressBar from '@/common/PageProgressBar';
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -28,6 +29,7 @@ function MyApp({
         <AppSeo />
         <ThemeProvider theme={theme}>
           <CssBaseline enableColorScheme />
+          <PageProgressBar />
           <AppLayout>
             <Component {...pageProps} />
           </AppLayout>
