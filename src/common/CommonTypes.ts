@@ -8,7 +8,6 @@ declare global {
   }
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type NullOrUndefined = null | undefined;
 
 export type KeyOf<T> = T extends NullOrUndefined ? never : keyof T;
