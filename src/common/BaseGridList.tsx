@@ -9,14 +9,9 @@ export interface BaseGridListProps<Item> {
   loadingRef?: React.Ref<HTMLDivElement>;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const defaultItems: any[] = [];
-
 function BaseGridList<Item>({
-  items = defaultItems as Item[],
-  loading,
+  items = [] as Item[],
   renderItem,
-  loadingRef,
 }: BaseGridListProps<Item>) {
   return (
     <Grid container spacing={1}>
