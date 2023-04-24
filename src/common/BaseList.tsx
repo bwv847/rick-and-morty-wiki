@@ -6,7 +6,6 @@ import {
   ListItemText,
   ListProps,
 } from '@mui/material';
-import LoadingIndicator from './LoadingIndicator';
 import { Maybe } from '@/gql/graphql';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -53,9 +52,7 @@ function BaseList<Item>({
         ) : null}
         {loading ? (
           <ListItem disablePadding>
-            <ListItemButton>
-              <LoadingIndicator loading />
-            </ListItemButton>
+            <ListItemButton />
           </ListItem>
         ) : null}
       </>

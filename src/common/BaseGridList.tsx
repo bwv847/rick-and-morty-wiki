@@ -1,6 +1,5 @@
 import React from 'react';
 import { Grid } from '@mui/material';
-import LoadingIndicator from './LoadingIndicator';
 import { Maybe } from '@/gql/graphql';
 
 export interface BaseGridListProps<Item> {

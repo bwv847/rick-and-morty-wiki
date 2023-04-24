@@ -1,10 +1,7 @@
 import React from 'react';
-import { Container, Toolbar } from '@mui/material';
+import { Container, Typography } from '@mui/material';
 import NextLink from '@/routing/NextLink';
 import { routes } from '@/routing/routes';
-import { Typography } from 'antd';
-
-const { Title } = Typography;
 
 type AppLayoutProps = React.PropsWithChildren;
 
@@ -13,7 +10,14 @@ function AppLayout({ children }: AppLayoutProps) {
     <>
       <Container maxWidth="lg" component="main" sx={{ p: 2 }}>
         <NextLink href={routes.home({})}>
-          <Title>Rick and Morty</Title>
+          <Typography
+            variant="h3"
+            component="h1"
+            color="textPrimary"
+            fontWeight="bold"
+          >
+            Rick and Morty
+          </Typography>
         </NextLink>
         {children}
       </Container>
