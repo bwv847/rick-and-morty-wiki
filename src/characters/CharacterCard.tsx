@@ -7,7 +7,7 @@ import {
 } from '@/gql/graphql';
 import { CardContent, CardHeader } from '@mui/material';
 import { gql } from '@apollo/client';
-import { isOfType } from '@/common/CommonUtils';
+import { isOfType, UNKNOWN } from '@/common/CommonUtils';
 import LabeledTextList from '@/common/LabeledTextList';
 
 function hasSpecs(
@@ -60,10 +60,10 @@ function CharacterCard({
               { label: 'Status', text: character.status },
               { label: 'Species', text: character.species },
               { label: 'Gender', text: character.gender },
-              { label: 'Origin', text: character.origin?.name ?? 'Unknown' },
+              { label: 'Origin', text: character.origin?.name ?? UNKNOWN },
               {
                 label: 'Location',
-                text: character.location?.name ?? 'Unknown',
+                text: character.location?.name ?? UNKNOWN,
               },
             ]}
           />

@@ -2,6 +2,8 @@ import { NullOrUndefined } from './CommonTypes';
 
 export const APP_TITLE = 'Rick and Morty';
 
+export const UNKNOWN = 'Unknown';
+
 export const IS_SERVER = typeof window === 'undefined';
 
 export function isOfType<T>(obj: any, keys: (keyof T)[]): obj is T {
