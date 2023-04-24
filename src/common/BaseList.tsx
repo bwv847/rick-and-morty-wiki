@@ -8,9 +8,6 @@ import {
 } from '@mui/material';
 import { Maybe } from '@/gql/graphql';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const defaultItems: any[] = [];
-
 export type BaseListProps<Item> = ListProps & {
   items: Maybe<Array<Item>>;
   renderItem: (item: Item, index: number) => void;
@@ -20,11 +17,10 @@ export type BaseListProps<Item> = ListProps & {
 };
 
 function BaseList<Item>({
-  items = defaultItems as Item[],
+  items = [] as Item[],
   renderItem,
   loading,
   maxVisibleItemCount,
-  loadingRef,
   ...rest
 }: BaseListProps<Item>) {
   const [expand, setExpand] = useState(!maxVisibleItemCount);
