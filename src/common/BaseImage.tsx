@@ -14,17 +14,8 @@ export const imageProps = {
   }),
 };
 
-type BaseImageProps = Omit<ImageProps, 'alt'> &
-  Required<Pick<ImageProps, 'alt'>>;
-
-function BaseImage(props: BaseImageProps) {
-  return (
-    // eslint-disable-next-line jsx-a11y/alt-text
-    <Image
-      {...props}
-      unoptimized
-    />
-  );
-}
+const BaseImage = (props: ImageProps) => (
+  <Image {...props} unoptimized alt={props.alt} />
+);
 
 export default BaseImage;
